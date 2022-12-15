@@ -13,19 +13,22 @@ const images = [
   },
 ];
 
+
 const imagesEl = document.querySelector('.gallery');
-console.log(imagesEl);
+
 
 const addEl = images.map(image => {
-  const liEl = document.createElement('li');
-  console.log(liEl);
-  liEl.insertAdjacentHTML("afterbegin", `<img src=${image.url} alt=${image.alt} width = 500 height = 300>`);
- imagesEl.style.display = "flex";
- imagesEl.style.listStyleType = "none"
- liEl.style.marginRight = "10px"
-  return liEl;
+ 
+ return imagesEl.insertAdjacentHTML("afterbegin", `
+  <li>
+  <img src="${image.url}" alt="${image.alt}" width = 500 height = 300>
+  </li>
+   `);
 });
-imagesEl.append(...addEl);
+
+imagesEl.style.display = "flex";
+imagesEl.style.listStyleType = "none"
+imagesEl.style.marginRight = "10px"
 
 
 
